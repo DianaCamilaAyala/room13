@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('img/pasillo.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: #ff0000;
+    font-size: 2.5em;
+}
+
+.search-container {
+    margin-top: 10px;
+}
+
+#search-bar {
+    padding: 10px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+}
+
+#search-button {
+    background: #ff0000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.categories {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.category {
+    background: rgba(255, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.category-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.category h3 {
+    color: white;
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.category ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+}
+
+.category ul li a:hover {
+    color: #ff0000;
+}
+
+.social-share {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.social-icons a {
+    color: #ff0000;
+    margin: 0 10px;
+    font-size: 1.5em;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    color: #e0e0e0;
+    text-align: center;
+    padding: 10px;
+}
+
+footer a {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

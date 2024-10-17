@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROOM 13 - Página Principal</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a ROOM 13</h1>
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Buscar...">
+            <button id="search-button" onclick="searchStories()"><i class="fas fa-search"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="categories">
+            <div class="category">
+                <h3>Crímenes Sin Resolver</h3>
+                <a href="crimen1.html">
+                    <img src="img/crime.jpg" alt="Crimen 1" class="category-image">
+                </a>
+                <p>Adéntrate en los crímenes más misteriosos.</p>
+                <ul>
+                    <li><a href="crimen1.html">Crimen 1: El asesinato de Jhon Lenon</a></li>
+                    <li><a href="crimen2.html">Crimen 2: El caso de Jeffrey Dahmer</a></li>
+                    <li><a href="crimen3.html">Crimen 3: El asesinato de Olof Palme</a></li>
+                    <li><a href="crimen4.html">Crimen 4: El caso de Ted Bundy</a></li>
+                    <li><a href="crimen5.html">Crimen 5: El caso de John Wayne Gacy</a></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3>Leyendas Urbanas</h3>
+                <a href="leyenda1.html">
+                    <img src="img/leyenda.jpg" alt="Leyenda 1" class="category-image">
+                </a>
+                <p>Conoce las leyendas que asustan a la gente.</p>
+                <ul>
+                    <li><a href="leyenda1.html">Leyenda 1: La Llorona</a></li>
+                    <li><a href="leyenda2.html">Leyenda 2: El Chupacabras</a></li>
+                    <li><a href="leyenda3.html">Leyenda 3: El Hombre Polilla</a></li>
+                    <li><a href="leyenda4.html">Leyenda 4: La Casa de la Calle Elm</a></li>
+                    <li><a href="leyenda5.html">Leyenda 5: El Silbon</a></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3>Teorías Conspirativas</h3>
+                <a href="teoria1.html">
+                    <img src="img/teoria.jpg" alt="Teoría 1" class="category-image">
+                </a>
+                <p>Explora las teorías más intrigantes.</p>
+                <ul>
+                    <li><a href="teoria1.html">Teoría 1: El Proyecto MK Ultra</a></li>
+                    <li><a href="teoria2.html">Teoría 2: Los Illuminati controlan el Mundo</a></li>
+                    <li><a href="teoria3.html">Teoría 3: El Incidente de Roswell</a></li>
+                    <li><a href="teoria4.html">Teoría 4: La Tierra plana</a></li>
+                    <li><a href="teoria5.html">Teoría 5: El Nuevo Orden Mundial</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="social-share">
+            <h4>Compartir en Redes Sociales:</h4>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ROOM 13. Todos los derechos reservados.</p>
+        <p><a href="#">Contacto</a> | <a href="#">Términos de Uso</a> | <a href="#">Política de Privacidad</a></p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

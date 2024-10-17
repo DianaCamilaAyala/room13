@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Color de fondo general */
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Contenedor para la imagen de fondo y el título */
+.login-background {
+    background-image: url('img/loginback.jpg'); /* Imagen de fondo */
+    background-size: cover; /* Ajusta la imagen para que cubra todo */
+    background-position: center; /* Centra la imagen */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+}
+
+/* Título de la página */
+.page-title {
+    font-size: 3em; /* Tamaño del título */
+    margin-bottom: 20px; /* Espacio debajo del título */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Sombra para mejor legibilidad */
+}
+
+/* Contenedor para el formulario de inicio de sesión */
+.login-container {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con transparencia */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    width: 300px; /* Ancho fijo para el contenedor */
+}
+
+/* Estilo del formulario */
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Espaciado entre los elementos del formulario */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Estilo de las etiquetas */
+label {
+    margin-bottom: 5px;
+}
+
+/* Estilo de los campos de entrada */
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Estilo para el botón de mostrar/ocultar contraseña */
+.toggle-password {
+    cursor: pointer;
+    margin-left: -30px; /* Ajusta según tu diseño */
+}
+
+/* Estilo de los botones */
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e74c3c; /* Color del botón */
+    color: white;
+    cursor: pointer;
+}
+
+/* Efecto hover para los botones */
+button:hover {
+    background-color: #c0392b;
+}
+
+/* Estilo del enlace de "Olvidé mi contraseña" */
+.forgot-password {
+    margin: 10px 0;
+}
+
+/* Estilo para el inicio de sesión social */
+.social-login {
+    display: flex;
+    justify-content: space-around; /* Espacio entre los botones sociales */
+}
+
+/* Estilo para mensajes de error */
+.message {
+    margin-top: 15px;
+    color: #e74c3c; /* Color para mensajes de error */
+}
