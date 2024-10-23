@@ -7,7 +7,17 @@
     <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <style>
+        #qrcode {
+            display: none; /* Mantén oculto por defecto */
+            margin: 20px 0;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 200px; /* Ancho del QR */
+            height: 200px; /* Alto del QR */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -20,50 +30,7 @@
 
     <main>
         <section class="categories">
-            <div class="category">
-                <h3>Crímenes Sin Resolver</h3>
-                <a href="crimen1.html">
-                    <img src="img/crime.jpg" alt="Crimen 1" class="category-image">
-                </a>
-                <p>Adéntrate en los crímenes más misteriosos.</p>
-                <ul>
-                    <li><a href="crimen1.html">Crimen 1: El asesinato de Jhon Lenon</a></li>
-                    <li><a href="crimen2.html">Crimen 2: El caso de Jeffrey Dahmer</a></li>
-                    <li><a href="crimen3.html">Crimen 3: El asesinato de Olof Palme</a></li>
-                    <li><a href="crimen4.html">Crimen 4: El caso de Ted Bundy</a></li>
-                    <li><a href="crimen5.html">Crimen 5: El caso de John Wayne Gacy</a></li>
-                </ul>
-            </div>
-
-            <div class="category">
-                <h3>Leyendas Urbanas</h3>
-                <a href="leyenda1.html">
-                    <img src="img/leyenda.jpg" alt="Leyenda 1" class="category-image">
-                </a>
-                <p>Conoce las leyendas que asustan a la gente.</p>
-                <ul>
-                    <li><a href="leyenda1.html">Leyenda 1: La Llorona</a></li>
-                    <li><a href="leyenda2.html">Leyenda 2: El Chupacabras</a></li>
-                    <li><a href="leyenda3.html">Leyenda 3: El Hombre Polilla</a></li>
-                    <li><a href="leyenda4.html">Leyenda 4: La Casa de la Calle Elm</a></li>
-                    <li><a href="leyenda5.html">Leyenda 5: El Silbon</a></li>
-                </ul>
-            </div>
-
-            <div class="category">
-                <h3>Teorías Conspirativas</h3>
-                <a href="teoria1.html">
-                    <img src="img/teoria.jpg" alt="Teoría 1" class="category-image">
-                </a>
-                <p>Explora las teorías más intrigantes.</p>
-                <ul>
-                    <li><a href="teoria1.html">Teoría 1: El Proyecto MK Ultra</a></li>
-                    <li><a href="teoria2.html">Teoría 2: Los Illuminati controlan el Mundo</a></li>
-                    <li><a href="teoria3.html">Teoría 3: El Incidente de Roswell</a></li>
-                    <li><a href="teoria4.html">Teoría 4: La Tierra plana</a></li>
-                    <li><a href="teoria5.html">Teoría 5: El Nuevo Orden Mundial</a></li>
-                </ul>
-            </div>
+            <!-- Contenido de categorías aquí -->
         </section>
 
         <section class="social-share">
@@ -75,10 +42,8 @@
             </div>
         </section>
 
-        <section class="qr-code-section">
-            <button id="show-qr-button">Mostrar QR para Compartir</button>
-            <div id="qr-code" style="display: none;"></div>
-        </section>
+        <button id="show-qr-button">Mostrar QR de la Página</button>
+        <div id="qrcode"></div> <!-- Contenedor para el código QR -->
     </main>
 
     <footer>
@@ -90,15 +55,20 @@
     <script>
         $(document).ready(function() {
             $('#show-qr-button').click(function() {
-                $('#qr-code').toggle(); // Muestra/oculta el QR
-                if ($('#qr-code').is(':visible')) {
-                    $('#qr-code').empty().qrcode({
-                        text: window.location.href // URL de la página actual
-                    });
-                }
+                // Genera el código QR con la URL de la página
+                const url = window.location.href; // Obtiene la URL actual
+                $('#qrcode').empty(); // Limpia el contenedor del QR
+                const qrcode = new QRCode(document.getElementById("qrcode"), {
+                    text: url,
+                    width: 200,
+                    height: 200,
+                    colorDark : "#000000",
+                    colorLight : "#ffffff",
+                    correctLevel : QRCode.CorrectLevel.H
+                });
+                $('#qrcode').toggle(); // Muestra u oculta el código QR
             });
         });
     </script>
 </body>
 </html>
-
