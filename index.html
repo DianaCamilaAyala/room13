@@ -7,17 +7,7 @@
     <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-    <style>
-        #qrcode {
-            display: none; /* Mantén oculto por defecto */
-            margin: 20px 0;
-            border: 1px solid #ccc;
-            padding: 10px;
-            width: 200px; /* Ancho del QR */
-            height: 200px; /* Alto del QR */
-        }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-qrcode/1.0/jquery.qrcode.min.js"></script>
 </head>
 <body>
     <header>
@@ -30,7 +20,50 @@
 
     <main>
         <section class="categories">
-            <!-- Contenido de categorías aquí -->
+            <div class="category">
+                <h3>Crímenes Sin Resolver</h3>
+                <a href="crimen1.html">
+                    <img src="img/crime.jpg" alt="Crimen 1" class="category-image">
+                </a>
+                <p>Adéntrate en los crímenes más misteriosos.</p>
+                <ul>
+                    <li><a href="crimen1.html">Crimen 1: El asesinato de Jhon Lenon</a></li>
+                    <li><a href="crimen2.html">Crimen 2: El caso de Jeffrey Dahmer</a></li>
+                    <li><a href="crimen3.html">Crimen 3: El asesinato de Olof Palme</a></li>
+                    <li><a href="crimen4.html">Crimen 4: El caso de Ted Bundy</a></li>
+                    <li><a href="crimen5.html">Crimen 5: El caso de John Wayne Gacy</a></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3>Leyendas Urbanas</h3>
+                <a href="leyenda1.html">
+                    <img src="img/leyenda.jpg" alt="Leyenda 1" class="category-image">
+                </a>
+                <p>Conoce las leyendas que asustan a la gente.</p>
+                <ul>
+                    <li><a href="leyenda1.html">Leyenda 1: La Llorona</a></li>
+                    <li><a href="leyenda2.html">Leyenda 2: El Chupacabras</a></li>
+                    <li><a href="leyenda3.html">Leyenda 3: El Hombre Polilla</a></li>
+                    <li><a href="leyenda4.html">Leyenda 4: La Casa de la Calle Elm</a></li>
+                    <li><a href="leyenda5.html">Leyenda 5: El Silbon</a></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h3>Teorías Conspirativas</h3>
+                <a href="teoria1.html">
+                    <img src="img/teoria.jpg" alt="Teoría 1" class="category-image">
+                </a>
+                <p>Explora las teorías más intrigantes.</p>
+                <ul>
+                    <li><a href="teoria1.html">Teoría 1: El Proyecto MK Ultra</a></li>
+                    <li><a href="teoria2.html">Teoría 2: Los Illuminati controlan el Mundo</a></li>
+                    <li><a href="teoria3.html">Teoría 3: El Incidente de Roswell</a></li>
+                    <li><a href="teoria4.html">Teoría 4: La Tierra plana</a></li>
+                    <li><a href="teoria5.html">Teoría 5: El Nuevo Orden Mundial</a></li>
+                </ul>
+            </div>
         </section>
 
         <section class="social-share">
@@ -41,9 +74,15 @@
                 <a href="#"><i class="fab fa-whatsapp"></i></a>
             </div>
         </section>
-
-        <button id="show-qr-button">Mostrar QR de la Página</button>
-        <div id="qrcode"></div> <!-- Contenedor para el código QR -->
+        
+        <!-- Sección de Código QR -->
+        <section class="qr-section" style="text-align:center; margin: 20px 0; background-color: #f2f2f2; padding: 20px; border-radius: 8px;">
+            <h4>Comparte nuestra página</h4>
+            <div id="qrcode" style="margin: 10px auto;"></div>
+            <button id="share-qr-button" style="padding: 10px 15px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                Compartir QR
+            </button>
+        </section>
     </main>
 
     <footer>
@@ -54,21 +93,22 @@
     <script src="script.js"></script>
     <script>
         $(document).ready(function() {
-            $('#show-qr-button').click(function() {
-                // Genera el código QR con la URL de la página
-                const url = window.location.href; // Obtiene la URL actual
-                $('#qrcode').empty(); // Limpia el contenedor del QR
-                const qrcode = new QRCode(document.getElementById("qrcode"), {
-                    text: url,
-                    width: 200,
-                    height: 200,
-                    colorDark : "#000000",
-                    colorLight : "#ffffff",
-                    correctLevel : QRCode.CorrectLevel.H
-                });
-                $('#qrcode').toggle(); // Muestra u oculta el código QR
+            // Generar el QR
+            var url = "https://dianacamilaayala.github.io/room13/"; // Cambia esto a la URL de tu página
+            $('#qrcode').qrcode(url);
+
+            // Compartir QR
+            $('#share-qr-button').on('click', function() {
+                const qrImage = $('#qrcode img').attr('src');
+                const tempLink = document.createElement('a');
+                tempLink.href = qrImage;
+                tempLink.download = 'qr_code.png';
+                document.body.appendChild(tempLink);
+                tempLink.click();
+                document.body.removeChild(tempLink);
             });
         });
     </script>
 </body>
 </html>
+
