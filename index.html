@@ -6,8 +6,6 @@
     <title>ROOM 13 - Página Principal</title>
     <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-qrcode/1.0/jquery.qrcode.min.js"></script>
 </head>
 <body>
     <header>
@@ -74,15 +72,6 @@
                 <a href="#"><i class="fab fa-whatsapp"></i></a>
             </div>
         </section>
-        
-        <!-- Sección de Código QR -->
-        <section class="qr-section" style="text-align:center; margin: 20px 0; background-color: #f2f2f2; padding: 20px; border-radius: 8px;">
-            <h4>Comparte nuestra página</h4>
-            <div id="qrcode" style="margin: 10px auto;"></div>
-            <button id="share-qr-button" style="padding: 10px 15px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">
-                Compartir QR
-            </button>
-        </section>
     </main>
 
     <footer>
@@ -91,24 +80,5 @@
     </footer>
     
     <script src="script.js"></script>
-    <script>
-        $(document).ready(function() {
-            // Generar el QR
-            var url = "https://dianacamilaayala.github.io/room13/"; // Cambia esto a la URL de tu página
-            $('#qrcode').qrcode(url);
-
-            // Compartir QR
-            $('#share-qr-button').on('click', function() {
-                const qrImage = $('#qrcode img').attr('src');
-                const tempLink = document.createElement('a');
-                tempLink.href = qrImage;
-                tempLink.download = 'qr_code.png';
-                document.body.appendChild(tempLink);
-                tempLink.click();
-                document.body.removeChild(tempLink);
-            });
-        });
-    </script>
 </body>
 </html>
-
