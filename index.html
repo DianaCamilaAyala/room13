@@ -75,10 +75,10 @@
         </section>
 
         <!-- Sección para Compartir QR -->
-        <section class="qr-section" style="background-color: rgba(0, 0, 0, 0.7); color: white; padding: 20px; text-align: center;">
+        <section class="qr-section" style="background-color: black; color: white; padding: 20px; text-align: center;">
             <h4>Compartir este enlace:</h4>
             <canvas id="qr-canvas"></canvas>
-            <button id="share-button" onclick="shareQR()">Compartir QR</button>
+            <button id="share-button" onclick="shareQR()" style="margin-top: 10px; background-color: #333; color: white; border: none; padding: 10px 15px; cursor: pointer;">Compartir QR</button>
         </section>
     </main>
 
@@ -95,6 +95,8 @@
             element: qrCanvas,
             value: window.location.href, // URL actual
             size: 200,
+            foreground: 'white', // Color del QR
+            background: 'black'  // Color de fondo del QR
         });
 
         // Función para compartir el QR
