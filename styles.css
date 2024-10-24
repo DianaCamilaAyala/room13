@@ -1,3 +1,4 @@
+/* Estilos generales */
 * {
     margin: 0;
     padding: 0;
@@ -43,6 +44,26 @@ header h1 {
     border-radius: 5px;
 }
 
+/* Estilo de los botones */
+.button {
+    background-color: rgba(255, 0, 0, 0.7); /* Color de fondo semi-transparente */
+    color: white; /* Color de texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    margin: 10px; /* Margen */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 1em; /* Tamaño de fuente */
+    cursor: pointer; /* Cambiar el cursor al pasar */
+    transition: background-color 0.3s ease, transform 0.2s; /* Transición suave */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+}
+
+.button:hover {
+    background-color: rgba(255, 0, 0, 1); /* Color de fondo al pasar el mouse */
+    transform: translateY(-2px); /* Sutil elevación al pasar el mouse */
+}
+
+/* Estilo para las categorías */
 .categories {
     display: flex;
     justify-content: space-around;
