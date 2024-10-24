@@ -7,14 +7,14 @@ function searchStories() {
     categories.forEach(category => {
         const stories = category.querySelectorAll('ul li a');
         stories.forEach(story => {
-            if (story.innerText.toLowerCase().includes(searchTerm)) {
-                window.location.href = story.href; // Redirige a la historia encontrada
+            if (story.textContent.toLowerCase().includes(searchTerm)) {
                 found = true;
+                alert(`Encontrado: ${story.textContent}`);
             }
         });
     });
 
     if (!found) {
-        alert("No se encontraron resultados para: " + searchTerm);
+        alert('No se encontraron coincidencias.');
     }
 }
